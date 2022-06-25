@@ -16,12 +16,13 @@ public class DivisibleChecker {
 		
 		System.out.println("Entrer le deuxième nombre: ");
 		nombre2 = scanner.nextInt();
+		DivisibleChecker divisibleChecker = new DivisibleChecker();
 		
 		if (nombre2 == 0) {
 			System.out.println("Le deuxième nombre ne doit pas être égal à zéro ");
 		}
 		else {
-			if (nombre1 % nombre2 == 0) {
+			if (divisibleChecker.isDivisible(nombre1, nombre2)) {
 				System.out.println(nombre1 + " est divisible par "+ nombre2);
 			}
 			else {
@@ -30,4 +31,13 @@ public class DivisibleChecker {
 		}
 	}
 
+	public boolean isDivisible(int nombre1, int nombre2) {
+		
+			if (nombre1 % nombre2 == 0) {
+				return true;
+			}
+			else {
+				return false;
+			}
+	}
 }
